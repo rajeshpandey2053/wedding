@@ -1,7 +1,6 @@
 'use strict';
 const dialog = document.querySelector('#curtain-dialog');
 const openButton = document.querySelector('#open-curtain');
-const skipButton = document.querySelector('#skip-intro');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 let motion = !reduced.matches;
 try { const saved = localStorage.getItem('wedding-motion'); if (saved !== null) motion = saved === 'on' && !reduced.matches; } catch {}
@@ -15,7 +14,7 @@ function finishReveal() {
   document.querySelector('.invitation-stage').classList.add('revealed');
 }
 function openCurtain(skip = false) {
-  openButton.disabled = true; skipButton.disabled = true;
+  openButton.disabled = true;
   dialog.classList.add('opening');
   document.querySelector('.invitation-stage').classList.add('revealed');
   if (skip || !motion) { finishReveal(); return; }
@@ -23,7 +22,6 @@ function openCurtain(skip = false) {
   revealTimer = setTimeout(finishReveal, 2300);
 }
 openButton.onclick = () => openCurtain();
-skipButton.onclick = () => openCurtain(true);
 dialog.addEventListener('cancel', e => { e.preventDefault(); finishReveal(); });
 document.body.classList.add('curtain-active');
 dialog.showModal();

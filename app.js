@@ -16,8 +16,8 @@ function countdown(){const ms=new Date('2026-12-23T00:00:00+05:45')-new Date();c
 function petals(){if(!motion||reduced.matches)return;for(let i=0;i<28;i++){const p=document.createElement('span');p.className='petal';p.style.left=Math.random()*100+'%';p.style.animationDelay=Math.random()*.6+'s';p.style.background=i%2?'var(--gold)':'var(--accent)';$('#petals').append(p);setTimeout(()=>p.remove(),4000)}}
 let revealTimer;
 function showCurtain(){stopPlaying();clearTimeout(revealTimer);const d=$('#curtain-dialog');d.classList.remove('opening');$('#open-curtain').disabled=false;$('#skip-intro').disabled=false;document.body.classList.add('curtain-active');window.scrollTo({top:0,behavior:'instant'});d.showModal();$('#open-curtain').focus()}
-function finishReveal(){clearTimeout(revealTimer);$('#curtain-dialog').close();document.body.classList.remove('curtain-active');window.celebrateFlowers();$('.invitation-stage').classList.add('revealed');$('.hero-explore').focus({preventScroll:true})}
-function openCurtain(skip=false){$('#open-curtain').disabled=true;$('#skip-intro').disabled=true;$('#curtain-dialog').classList.add('opening');$('.invitation-stage').classList.add('revealed');if(skip||!motion||reduced.matches){finishReveal();return}revealTimer=setTimeout(finishReveal,2300)}
+function finishReveal(){clearTimeout(revealTimer);document.body.append($('#petals'));$('#curtain-dialog').close();document.body.classList.remove('curtain-active');$('.invitation-stage').classList.add('revealed');$('.hero-explore').focus({preventScroll:true})}
+function openCurtain(skip=false){$('#open-curtain').disabled=true;$('#skip-intro').disabled=true;$('#curtain-dialog').append($('#petals'));window.celebrateFlowers();$('#curtain-dialog').classList.add('opening');$('.invitation-stage').classList.add('revealed');if(skip||!motion||reduced.matches){finishReveal();return}revealTimer=setTimeout(finishReveal,2300)}
 $('#open-curtain').onclick=()=>openCurtain();$('#skip-intro').onclick=()=>openCurtain(true);$('#replay').onclick=showCurtain;
 $('#curtain-dialog').addEventListener('cancel',e=>{e.preventDefault();finishReveal()});
 const slides=[

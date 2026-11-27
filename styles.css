@@ -11,3 +11,5 @@
 .rose-petal-shape{display:block;width:100%;height:100%;background:url('assets/rose-petal.png') center/contain no-repeat;filter:brightness(1.65) saturate(.72) drop-shadow(1px 2px 2px #31040c25);animation:petal-tumble var(--tumble) ease-in-out infinite alternate;transform-style:preserve-3d}
 @keyframes petal-tumble{0%{transform:rotateZ(var(--tilt)) rotateY(-32deg) rotateX(12deg)}50%{transform:rotateZ(calc(var(--tilt) + 25deg)) rotateY(28deg) rotateX(-18deg)}100%{transform:rotateZ(calc(var(--tilt) - 15deg)) rotateY(-18deg) rotateX(25deg)}}
 @keyframes celebration-flight{0%{opacity:0;transform:translate(0,0) rotate(0)}3%{opacity:.95}80%{opacity:.9}100%{opacity:0;transform:translate(var(--drift),var(--fall)) rotate(var(--spin))}}
+
+#petals[popover]{margin:0;padding:0;border:0;width:100%;height:100%;max-width:none;max-height:none;background:transparent;overflow:hidden;color:inherit}#petals::backdrop{background:transparent;pointer-events:none}

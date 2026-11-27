@@ -17,7 +17,7 @@ window.celebrateFlowers = function celebrateFlowers() {
     container.setAttribute('popover', 'manual');
     container.showPopover();
   }
-  flowerCleanup = setTimeout(window.stopFlowerShower, 3500);
+  flowerCleanup = setTimeout(window.stopFlowerShower, 3000);
   const bounds = card.getBoundingClientRect();
 
   for (let i = 0; i < 120; i++) {
@@ -36,7 +36,7 @@ window.celebrateFlowers = function celebrateFlowers() {
     petal.style.setProperty('--spin', `${(Math.random() - .5) * 300}deg`);
     petal.style.setProperty('--size', `${9 + Math.random() * 8}px`);
     const delay = i < 24 ? 0 : (i - 24) / 95 * .65;
-    petal.style.animationDuration = `${3.5 - delay}s`;
+    petal.style.animationDuration = `${3 - delay}s`;
     petal.style.animationDelay = `${delay}s`;
     container.append(petal);
     petal.addEventListener('animationend', () => petal.remove(), { once: true });

@@ -22,7 +22,7 @@ window.celebrateFlowers = function celebrateFlowers() {
     petal.style.setProperty('--drift', `${(Math.random() - .5) * 90}px`);
     petal.style.setProperty('--fall', `${Math.min(window.innerHeight - Math.max(0, bounds.top) + 30, bounds.height)}px`);
     petal.style.setProperty('--spin', `${(Math.random() - .5) * 300}deg`);
-    petal.style.setProperty('--size', `${15 + Math.random() * 15}px`);
+    petal.style.setProperty('--size', `${9 + Math.random() * 8}px`);
     petal.style.animationDuration = `${4.5 + Math.random() * 2}s`;
     petal.style.animationDelay = `${i < 24 ? 0 : Math.random() * 2.2}s`;
     container.append(petal);

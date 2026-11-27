@@ -13,3 +13,8 @@
 @keyframes celebration-flight{0%{opacity:0;transform:translate(0,0) rotate(0)}3%{opacity:.95}80%{opacity:.9}100%{opacity:0;transform:translate(var(--drift),var(--fall)) rotate(var(--spin))}}
 
 #petals[popover]{margin:0;padding:0;border:0;width:100%;height:100%;max-width:none;max-height:none;background:transparent;overflow:hidden;color:inherit}#petals::backdrop{background:transparent;pointer-events:none}
+
+/* The invocation sits just beneath Ganesh on the invitation. */
+header{border-bottom:0;box-shadow:none}
+header .text-button{border-bottom:0}
+.ganesh-invocation{position:absolute;top:26%;left:0;width:100%;margin:0;text-align:center;color:#791b29;font-family:var(--serif);font-size:clamp(10px,2.6vw,18px);font-weight:600;line-height:1.2;pointer-events:none;text-shadow:0 1px #fff3dc}

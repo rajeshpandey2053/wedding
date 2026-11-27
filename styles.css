@@ -18,3 +18,8 @@
 header{border-bottom:0;box-shadow:none}
 header .text-button{border-bottom:0}
 .ganesh-invocation{position:absolute;top:26%;left:0;width:100%;margin:0;text-align:center;color:#791b29;font-family:var(--serif);font-size:clamp(10px,2.6vw,18px);font-weight:600;line-height:1.2;pointer-events:none;text-shadow:0 1px #fff3dc}
+
+/* Present the invitation as the entire experience. */
+.invitation-only{min-height:100svh;display:grid;place-items:center;padding:12px;background:radial-gradient(ellipse at center,#fff5e0,#dec29a)}
+.invitation-only .invitation-stage{width:min(calc(100vw - 24px),calc((100svh - 24px)*.6667));max-width:none;margin:auto}
+@media(max-width:600px){.invitation-only{padding:0}.invitation-only .invitation-stage{width:min(100vw,calc(100svh * .6667))}}
